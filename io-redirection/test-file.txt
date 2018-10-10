@@ -1,0 +1,11 @@
+Hello
+I am a message.
+I am redirected from the file:
+TestData
+This means that I, although I am a file
+I am communicating with you through the standard input
+(That means std::cin, that you are using std::getline on)
+I magically appear inside your variable named
+input.
+I can also contain numbers, like: 10009421
+You will never see this line
