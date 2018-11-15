@@ -5,15 +5,10 @@ private:
     // private member variables
     int a;
     // private member functions / methods
-    int helper_fcn();
 public:
-    // Note: No public member variables!
-    // public member functions
-    TestClass(); // Constructor
-    ~TestClass(); // Destructor
     // public methods to read / write the private member variabel a
     void setA(int new_val);
-    int getA();
+    int getA() const;
     TestClass& addA(const TestClass &other_obj);
 };
 
@@ -34,6 +29,9 @@ int main()
 {
     TestClass class1, class2;
     // class1 and class2 are given some values
-    class1.add(class2);
-
+    class1.setA(2);
+    class2.setA(3);
+    std::cout << class1.getA() << ", " << class2.getA() <<std::endl;
+    class1.addA(class2);
+    std::cout << "Sum: " << class1.getA() << ", " << class2.getA() <<std::endl;
 }
