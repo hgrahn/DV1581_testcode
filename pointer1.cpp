@@ -17,11 +17,13 @@ int main()
     TwoInts *ptr_ti; // pointer
 
     ti.print("ti");
-    ptr_ti->print("ptr_ti");
+
+    //ptr_ti->print("ptr_ti");
 
     //ptr_ti = new TwoInts();
     //ptr_ti->print("ptr_ti2");
 
     //delete ptr_ti;
+    // ptr_ti: now a dangling pointer => danger!
     //ptr_ti->print("ptr_ti3");
 }

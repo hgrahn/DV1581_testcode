@@ -3,33 +3,35 @@
 #include <vector>
 #include <string>
 
-int main()
-{
-    std::vector<std::string> words{"the", "quick", "red", "fox", "jumps",
-        "over", "the", "slow", "red", "turtle"};
+std::vector<std::string> words{"the", "quick", "red", "fox", "jumps",
+    "over", "the", "slow", "red", "turtle"};
 
-    std::cout << "The individual words are: ";
-    for (auto b = words.cbegin(); b != words.cend(); b++)
+void print_words()
+{
+    for (auto b = words.cbegin(); b != words.cend(); ++b)
         std::cout << *b << " ";
     std::cout << std::endl << std::endl;
+}
+
+int main()
+{
+
+    std::cout << "The individual words are: ";
+    print_words();
 
     // sort the words
     std::sort(words.begin(), words.end());
     std::cout << "The sorted words are: ";
-    for (auto b = words.cbegin(); b != words.cend(); b++)
-        std::cout << *b << " ";
-    std::cout << std::endl << std::endl;
+    print_words();
 
     // remove duplicates
     auto end_unique = std::unique(words.begin(), words.end());
     std::cout << "The sorted unique words are: ";
-    for (auto b = words.cbegin(); b != words.cend(); b++)
-        std::cout << *b << " ";
-    std::cout << std::endl;
+    //std::cout << *end_unique << " " << *words.end() << std::endl;
+    std::cout << words.size() << std::endl;
+    print_words();
 
     words.erase(end_unique, words.end());
     std::cout << "The sorted unique words are: ";
-    for (auto b = words.cbegin(); b != words.cend(); b++)
-        std::cout << *b << " ";
-    std::cout << std::endl;
+    print_words();
 }

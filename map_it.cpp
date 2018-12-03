@@ -9,6 +9,7 @@ int main()
     // example of iterating over set
     std::set<int> iset = {0,1,2,3,4,5,6,7,8,9};
     std::set<int>::iterator set_it = iset.begin();
+
     while (set_it != iset.end()) {
         std::cout << *set_it << " "; // ok: can read the key but not write
         ++set_it;
@@ -35,7 +36,9 @@ int main()
     }
     std::cout << std::endl;
 
-    /*/
+    return 0;
+
+    // example to remove a key - test with different words
     std::string removal_word("the");
     // erase on a key returns the number of elements removed
     if (int n = word_count.erase(removal_word))
@@ -45,5 +48,4 @@ int main()
     }
     else
         std::cout << "oops: " << removal_word << " not found!\n\n";
-    /*/
 }
