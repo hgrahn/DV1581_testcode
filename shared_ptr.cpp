@@ -15,14 +15,15 @@ int main()
     std::cout << "*p3: " << *p3 << ", *p4: " << *p4 << ", *p5: " << *p5 << std::endl;
     std::cout << std::endl;
 
-    return 0;
+    //return 0;
     // example of reference counting
-    auto p = std::make_shared<int>(42);
+    std::shared_ptr<int> p = std::make_shared<int>(42);
     auto q(p);
     std::cout << "p: " << p << ", q: " << q << std::endl;
     std::cout << "*p: " << *p << ", *q: " << *q << std::endl;
     std::cout << "p.use_count() = " << p.use_count() << std::endl;
 
+    //return 0;
     q = nullptr; // remove q pointer
     std::cout << "p: " << p << ", q: " << q << std::endl;
     std::cout << "p.use_count() = " << p.use_count() << std::endl;

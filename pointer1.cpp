@@ -20,10 +20,18 @@ int main()
 
     //ptr_ti->print("ptr_ti");
 
-    //ptr_ti = new TwoInts();
-    //ptr_ti->print("ptr_ti2");
+    ptr_ti = new TwoInts();
+    ptr_ti->print("ptr_ti2");
 
-    //delete ptr_ti;
+/*
+    ti.a = 23;
+    ti.print("ti");
+
+    ptr_ti = &ti;
+    ptr_ti->print("ptr_ti2");
+*/
+    delete ptr_ti;
+    ptr_ti = nullptr;
     // ptr_ti: now a dangling pointer => danger!
-    //ptr_ti->print("ptr_ti3");
+    ptr_ti->print("ptr_ti3");
 }

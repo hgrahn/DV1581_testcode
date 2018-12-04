@@ -3,6 +3,8 @@
 #include <string>
 #include <map>
 #include <set>
+int a = 5;
+int b;
 
 int main()
 {
@@ -36,10 +38,10 @@ int main()
     }
     std::cout << std::endl;
 
-    return 0;
+    //return 0;
 
     // example to remove a key - test with different words
-    std::string removal_word("the");
+    std::string removal_word("their");
     // erase on a key returns the number of elements removed
     if (int n = word_count.erase(removal_word))
     {
