@@ -65,6 +65,7 @@ int main()
     std::cout << std::endl;
     return 0;
 
+    // examples with index operator, increment operator, and member
     std::cout << ic2[ic2.get_current()] << std::endl;
     ++ic2;
     std::cout << "ic2[ic2.get_current()] = " << ic2[ic2.get_current()] << std::endl;
