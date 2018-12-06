@@ -24,14 +24,16 @@ public:
         this->data = new int[capacity]();
     }
 
-    int& operator[](unsigned index) {
-        //std::cout << " h " << index << std::endl;
-        return data[index];
-    }
+    int& operator[](unsigned index) { return data[index]; }
     const int& operator[](unsigned index) const { return data[index]; }
+
+    // add operators for increment and decrement
+    IndexClass& operator++() { ++current; return *this; }
+    IndexClass& operator--() { --current; return *this; }
 
     const int size() const { return this->sz; }
     const int max_size() const { return this->capacity; }
+
     void print()
     {
         std::cout << "capacity = " << this->capacity
