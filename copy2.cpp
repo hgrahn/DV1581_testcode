@@ -28,7 +28,7 @@ public:
     */
     TestClass& operator=(const TestClass &tc_in)
     {
-        std::cout << "TestClass: copy-assigment constructor" << std::endl;
+        std::cout << "TestClass: copy-assigment operator" << std::endl;
         s = tc_in.s;
         return *this;
     }

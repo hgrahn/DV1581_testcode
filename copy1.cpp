@@ -37,7 +37,7 @@ public:
 };
 
 // show both call-by-value and call-by-reference
-void fcn(TestClass tc_in)
+void fcn(TestClass& tc_in)
 {
     std::cout << "Enter fcn " << std::endl;
     std::string s("fcn");
