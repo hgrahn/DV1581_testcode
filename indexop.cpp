@@ -9,6 +9,7 @@ private:
     int current;
     int *data;
 public:
+    // two constructors
     IndexClass()
     {
         this->capacity = 16;
@@ -24,15 +25,20 @@ public:
         this->data = new int[capacity]();
     }
 
+    const int get_current() const { return this->current;}
+    const int get_current_val() const { return data[this->current];}
+    const int size() const { return this->sz; }
+    const int max_size() const { return this->capacity; }
+
     int& operator[](unsigned index) { return data[index]; }
     const int& operator[](unsigned index) const { return data[index]; }
 
     // add operators for increment and decrement
-    IndexClass& operator++() { ++current; return *this; }
-    IndexClass& operator--() { --current; return *this; }
+    int operator++() { return ++current; }
+    int operator--() { return --current; }
 
-    const int size() const { return this->sz; }
-    const int max_size() const { return this->capacity; }
+    // add operator for member access
+    int operator*() const { return data[current]; }
 
     void print()
     {
@@ -56,4 +62,13 @@ int main()
     ic1.print();
     for (int i = 0; i < ic2.max_size(); i++) ic2[i] = i;
     ic2.print();
+    std::cout << std::endl;
+    return 0;
+
+    std::cout << ic2[ic2.get_current()] << std::endl;
+    ++ic2;
+    std::cout << "ic2[ic2.get_current()] = " << ic2[ic2.get_current()] << std::endl;
+    ++ic2;
+    std::cout << "*ic2 = " << *ic2 << std::endl;
+
 }
