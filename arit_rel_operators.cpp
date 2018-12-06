@@ -18,7 +18,6 @@ public:
         std::cout << this->name << ": a = " << this->a << ", b = " << this->b << std::endl;
     }
 
-
 };
 
 bool operator==(const AritRelClass &lhs, const AritRelClass &rhs)
