@@ -3,6 +3,9 @@
 
 class BaseClass
 {
+protected:
+    int a;
+    std::string name;
 public:
     BaseClass() {
         a = 0;
@@ -17,9 +20,6 @@ public:
     virtual void setA(const int newa) { a = newa; }
     virtual void print() const { std::cout << "print(): name = " << name << ", a = " << a << std::endl; }
     virtual ~BaseClass() = default;
-protected:
-    int a;
-    std::string name;
 };
 
 class DerivedClass1 : public BaseClass // inherits from BaseClass
@@ -90,4 +90,7 @@ int main()
     bc_ptr2->setA(4);
     dc1.print();
     dc2.print();
+    bc_ptr1 = &dc2;
+    bc_ptr1->setA(50);
+    bc_ptr1->print();
 }
