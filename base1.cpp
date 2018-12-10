@@ -5,6 +5,9 @@ class BaseClass
 {
 private:
     int a;
+protected:
+    int b;
+    std::string name;
 public:
     BaseClass() {
         a = 0;
@@ -17,17 +20,17 @@ public:
     {
         std::cout << "BaseClass constructor: " << "name = " << name << ", a = " << a << ", b = " << b << std::endl;
     }
+
     int getA() const { return a; }
     void setA(const int newa) { a = newa; }
     virtual int getB() const { return b; }
     virtual void setB(const int newb) { b = newb; }
+
     virtual void print() const { std::cout << "print(): name = " << name << ", a = " << a << ", b = " << b << std::endl; }
     virtual ~BaseClass() = default;
-protected:
-    int b;
-    std::string name;
 };
 
+// inheritance can be public or private
 class DerivedClass : public BaseClass // inherits from BaseClass
 {
 private:
@@ -43,8 +46,10 @@ public:
     {
         std::cout << "DerivedClass constructor: " << "name = " << initname << ", a = " << inita << ", b = " << initb << ", c = " << initc << std::endl;
     }
+
     int getB() const override { return factor * b; }
     void setB(const int newb) override { b = factor * newb; }
+
     void print() const override
     {
         BaseClass::print();
@@ -60,12 +65,17 @@ int main()
     bc1.print();
     bc2.print();
     std::cout << std::endl;
+
     DerivedClass dc1;
     DerivedClass dc2(5,7, 9, "dc2");
     dc1.print();
     dc2.print();
     std::cout << std::endl;
+
     dc2.setA(10);
     dc2.setB(10);
     dc2.print();
+    dc2.setA(40);
+    bc2.setB(50);
+    bc2.print();
 }
