@@ -9,8 +9,8 @@ public:
     TestTemplate() = default;
     TestTemplate(T inita, std::string initname) : a(inita), name(initname) { }
     void setA(const T newa);
-    T getA() const { return a; }
-    void print();
+    T getA() const;
+    void print() const;
 };
 
 template <typename T>
@@ -34,8 +34,8 @@ void TestTemplate<T>::print() const
 int main()
 {
     TestTemplate<int> ttint(10, "Int");    // two different classes
-    TestTemplate<string> ttstring("Test string", "String");
+    TestTemplate<std::string> ttstring("Test string", "String");
 
-    ttint.print()
-    ttstring.print()
+    ttint.print();
+    ttstring.print();
 }
