@@ -1,12 +1,13 @@
 #include <iostream>
 #include <string>
+#include <vector>
 
 template <typename T> class TestTemplate {
 private:
     T a;
     std::string name;
 public:
-    TestTemplate() = default;
+    TestTemplate() = delete;
     TestTemplate(T inita, std::string initname) : a(inita), name(initname) { }
     void setA(const T newa);
     T getA() const;
