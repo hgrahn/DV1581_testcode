@@ -46,7 +46,6 @@ public:
     virtual ~Base2() = default;
 };
 
-// inheritance can be public or private
 class DerivedClass : public Base1, public Base2 // inherits from Base1 and Base2
 {
 private:
