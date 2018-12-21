@@ -26,8 +26,8 @@ int main()
 
     // remove duplicates
     auto end_unique = std::unique(words.begin(), words.end());
+    std::cout << "end_unique: " << *end_unique << " " << *(words.end()-1) << std::endl;
     std::cout << "The sorted unique words are: ";
-    //std::cout << *end_unique << " " << *words.end() << std::endl;
     std::cout << words.size() << std::endl;
     print_words();
 
