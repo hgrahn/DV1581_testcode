@@ -19,7 +19,7 @@ int main()
 
     ti.print("ti");
 
-    ptr_ti->print("ptr_ti");
+    //ptr_ti->print("ptr_ti");
 
     ptr_ti = new TwoInts(5, 7);
     ptr_ti->print("ptr_ti2");
@@ -29,8 +29,8 @@ int main()
 
     ptr_ti->b = 31;
     ptr_ti->print("ptr_ti2");
-    
-    return 0;
+
+    //return 0;
 
     ptr_ti = &ti;
     ptr_ti->print("ptr_ti2");

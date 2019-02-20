@@ -15,12 +15,13 @@ int main()
 
     // count the number of times each word occurs in the input
     for (auto w = words.cbegin(); w != words.cend(); w++)
-        ++word_count[*w]; // fetch and increment the counter for word
+        // fetch and increment the counter for word
+        ++word_count[*w];
 
     for (const auto &w : word_count) // for each element in the map
         // print the results
         std::cout << w.first << " occurs " << w.second
-            << ((w.second > 1) ? " times" : " time") << std::endl;
+                << ((w.second > 1) ? " times" : " time") << std::endl;
 
     std::cout << std::endl;
     word_count.clear();
@@ -29,10 +30,11 @@ int main()
     // excluding some words
     for (auto w = words.cbegin(); w != words.cend(); w++)
         if (exclude.find(*w) == exclude.end())
-            ++word_count[*w]; // fetch and increment the counter for word
+            // fetch and increment the counter for word
+            ++word_count[*w];
 
     for (const auto &w : word_count) // for each element in the map
         // print the results
         std::cout << w.first << " occurs " << w.second
-            << ((w.second > 1) ? " times" : " time") << std::endl;
+                << ((w.second > 1) ? " times" : " time") << std::endl;
 }

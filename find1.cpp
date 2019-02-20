@@ -14,6 +14,7 @@ int main()
     std::cout << "The value " << val
         << (result == vec.cend() ? " is not present" : " is present")
         << std::endl;
+
     val = 7;
     result = std::find(vec.cbegin(), vec.cend(), val);
     std::cout << "The value " << val

@@ -1,6 +1,6 @@
 #include <iostream>
 
-int fact(int val) // called by value
+int fact(int &val) // called by value
 {
     int ret = 1; // local variable to hold the result as we calculate it
     while (val > 1)
