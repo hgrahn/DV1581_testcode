@@ -9,9 +9,8 @@ private:
 public:
     TestClass()
     {
-        this->s = std::string("Default string");
-
         std::cout << "TestClass: constructor" << std::endl;
+        this->s = std::string("Default string");
     }
 
     TestClass(std::string s)
@@ -22,7 +21,7 @@ public:
 
     ~TestClass()
     {
-        std::cout << "TestClass: destructor -- " << s << std::endl;
+        std::cout << "TestClass: destructor -- " << this->s << std::endl;
     }
 };
 

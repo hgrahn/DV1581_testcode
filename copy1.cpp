@@ -9,8 +9,8 @@ private:
 public:
     TestClass()
     {
-        this->s = std::string("Default string");
         std::cout << "TestClass: constructor" << std::endl;
+        this->s = std::string("Default string");
     }
 
     TestClass(std::string s)
@@ -21,8 +21,8 @@ public:
 
     TestClass(const TestClass& tc_in)
     {
-        std::cout << "TestClass: copy constructor" << std::endl;
-        s = tc_in.s;
+        std::cout << "TestClass: copy constructor, s = " << tc_in.s << std::endl;
+        this->s = tc_in.s;
     }
 
     void print()
@@ -32,12 +32,12 @@ public:
 
     ~TestClass()
     {
-        std::cout << "TestClass: destructor" << std::endl;
+        std::cout << "TestClass: destructor, s = " << this->s << std::endl;
     }
 };
 
 // show both call-by-value and call-by-reference
-void fcn(TestClass& tc_in)
+void fcn(TestClass tc_in)
 {
     std::cout << "Enter fcn " << std::endl;
     std::string s("fcn");
