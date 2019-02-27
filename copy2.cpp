@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <memory>
 
 class TestClass
 {
@@ -29,7 +28,7 @@ public:
     TestClass& operator=(const TestClass &tc_in)
     {
         std::cout << "TestClass: copy-assigment operator" << std::endl;
-        s = tc_in.s;
+        this->s = tc_in.s;
         return *this;
     }
     void print()

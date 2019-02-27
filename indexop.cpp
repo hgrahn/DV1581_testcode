@@ -30,12 +30,17 @@ public:
     const int size() const { return this->sz; }
     const int max_size() const { return this->capacity; }
 
+    // two versions: one read/write and one read-only
     int& operator[](unsigned index) { return data[index]; }
     const int& operator[](unsigned index) const { return data[index]; }
 
-    // add operators for increment and decrement
+    // add operators for pre increment and pre decrement
     int operator++() { return ++current; }
     int operator--() { return --current; }
+
+    // add operators for post increment and post decrement
+    int operator++(int) { int old = current; current++; return old; }
+    int operator--(int) { int old = current; current--; return old; }
 
     // add operator for member access
     int operator*() const { return data[current]; }
@@ -46,7 +51,7 @@ public:
             << ", size = " << this->sz << ", current = " << this->current
             << std::endl;
         for (unsigned i = 0; i < capacity; i++)
-            std::cout << " " << data[i];
+            std::cout << "  " << data[i];
         std::cout << std::endl;
     }
 };
@@ -68,7 +73,7 @@ int main()
     // examples with index operator, increment operator, and member
     std::cout << ic2[ic2.get_current()] << std::endl;
     ++ic2;
-    std::cout << "ic2[ic2.get_current()] = " << ic2[ic2.get_current()] << std::endl;
+    std::cout << "ic2[ic2.get_current()] = ic2[" <<ic2.get_current() << "] = " << ic2[ic2.get_current()] << std::endl;
     ++ic2;
     std::cout << "*ic2 = " << *ic2 << std::endl;
 
