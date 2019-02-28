@@ -8,6 +8,7 @@ private:
     std::string name;
 public:
     AritRelClass() = default;
+    //AritRelClass() {a=0; b=0, name = "";}
     AritRelClass(int la, int lb, std::string lname) : a(la), b(lb), name(lname) {}
     AritRelClass(AritRelClass& old) : a(old.a), b(old.b), name(old.name) {}
 
