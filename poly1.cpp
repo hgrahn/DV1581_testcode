@@ -83,6 +83,7 @@ int main()
     dc2.print();
     std::cout << std::endl;
 
+    return 0;
     // exemple of polymorphism
     BaseClass *bc_ptr1 = &dc1;
     BaseClass *bc_ptr2 = &dc2;
