@@ -2,9 +2,16 @@
 #include <iostream>
 
 template <typename T>
-T tMax(T a, T b)
+T tMax(const T &a, const T &b)
 {
     if(a < b)
+        return b;
+    return a;
+}
+
+char tMax(const char &a, const char &b)
+{
+    if(b < a)
         return b;
     return a;
 }

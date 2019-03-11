@@ -20,6 +20,12 @@ void TestTemplate<T>::setA(const T newa)
 }
 
 template <typename T>
+void TestTemplate<T>::setA(const float &newa)
+{
+    this->a = newa;
+}
+
+template <typename T>
 T TestTemplate<T>::getA() const
 {
     return this->a;
@@ -38,4 +44,6 @@ int main()
 
     ttint.print();
     ttstring.print();
+    ttint.setA(10.0f);
+    ttint.print();
 }

@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 
+// Example of non-type parameter for a function template
+
 template <typename T>
 T SumArray(T arr[], int numberOfElements)
 {
