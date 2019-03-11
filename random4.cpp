@@ -5,9 +5,10 @@
 
 int main()
 {
-    const unsigned int nvals = 500;
-    const unsigned mean = 10;
+    const unsigned int nvals = 1000;
+    const unsigned mean = 20;
     const double stddev = mean/3.0;
+
     std::default_random_engine e; // generates random integers
     std::normal_distribution<> n(mean, stddev);
     std::vector<unsigned> vals(mean*2);

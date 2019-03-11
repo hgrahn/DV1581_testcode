@@ -9,7 +9,7 @@ std::vector<unsigned> bad_randVec()
     std::default_random_engine e;
     std::uniform_int_distribution<unsigned> u(0,9);
     std::vector<unsigned> ret;
-    for (size_t i = 0; i < 40; ++i)
+    for (size_t i = 0; i < 20; ++i)
         ret.push_back(u(e));
     return ret;
 }
