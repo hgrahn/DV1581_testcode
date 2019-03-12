@@ -24,7 +24,12 @@ int main()
     std::cout << std::endl;
 
     std::cout << "e4: ";
-    for (size_t i = 0; i < 10; ++i) std::cout << e4() << " ";
+    for (size_t i = 0; i < 20; ++i) std::cout << e4() << " ";
+    std::cout << std::endl;
+
+    e3.seed(345345);
+    std::cout << "e3: ";
+    for (size_t i = 0; i < 10; ++i) std::cout << e3() << " ";
     std::cout << std::endl;
 
 }
